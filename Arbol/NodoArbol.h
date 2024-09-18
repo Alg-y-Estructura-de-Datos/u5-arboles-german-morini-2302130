@@ -1,8 +1,9 @@
 #ifndef U05_ARBOL_ARBOL_NODOARBOL_H_
 #define U05_ARBOL_ARBOL_NODOARBOL_H_
 
+#include <iostream>
 #include <string.h>
-using namespace std;
+#include <string>
 
 template <class T>
 class NodoArbol
@@ -54,18 +55,18 @@ public:
     this->left = l;
   }
 
-   void print(bool esDerecho, string identacion) {
+   void print(bool esDerecho, std::string identacion) {
     if (right != NULL) {
         right->print(true, identacion + (esDerecho ? "     " : "|    "));
     }
-    cout << identacion;
+    std::cout << identacion;
     if (esDerecho) {
-        cout << " /";
+        std::cout << " /";
     } else {
-        cout << " \\";
+        std::cout << " \\";
     }
-    cout << "-- ";
-    cout << data << endl;
+    std::cout << "-- ";
+    std::cout << data << std::endl;
     if (left != NULL) {
         left->print(false, identacion + (esDerecho ? "|    " : "     "));
     }
